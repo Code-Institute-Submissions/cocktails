@@ -1,8 +1,10 @@
+const url = "https://www.thecocktaildb.com/api/json/v1/1";
+
 // get cocktail data from json
 function getCardData(cb) {
     var xhr = new XMLHttpRequest();
 
-    xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic");
+    xhr.open("GET", url + "/filter.php?a=Non_Alcoholic");
     xhr.send();
 
     xhr.onreadystatechange = function () {
@@ -18,7 +20,7 @@ function clearLastResults() {
     el.innerHTML = "";
 }
 
-// create buttons list cocktails
+// create card list cocktails
 function createCocktailCards() {
     var tableRows = [];
     var cardData, cardImage;
@@ -68,3 +70,4 @@ function createCocktailCards() {
         el.innerHTML = `<table>${tableRows}</table>`.replace(/,/g,"");
     });
 }
+
