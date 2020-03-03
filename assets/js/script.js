@@ -1,5 +1,5 @@
 // get cocktail data from json
-function getButtonData(cb) {
+function getCardData(cb) {
     var xhr = new XMLHttpRequest();
 
     xhr.open("GET", "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic");
@@ -19,7 +19,7 @@ function clearLastResults() {
 }
 
 // create buttons list cocktails
-function createCocktailButtons() {
+function createCocktailCards() {
     var tableRows = [];
     var cardData, cardImage;
     var el = document.getElementById("card");
@@ -27,7 +27,7 @@ function createCocktailButtons() {
 
     clearLastResults();
 
-    getButtonData(function (data) {
+    getCardData(function (data) {
         data = data.drinks;
 
         // cycle thru 
