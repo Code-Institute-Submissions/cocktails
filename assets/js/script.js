@@ -1,5 +1,4 @@
-const url = "https://www.thecocktaildb.com/api/json/v1/1";
-
+const url = "https://www.thecocktaildb.com/api/json/v1/1"; 
 // get cocktail data from json
 function getCardData(cb) {
     var xhr = new XMLHttpRequest();
@@ -23,7 +22,7 @@ function clearLastResults() {
 // create card list cocktails
 function createCocktailCards() {
     var tableRows = [];
-    var cardData, cardImage;
+    var cardData,cardImage;
     var el = document.getElementById("card");
     el.innerHTML = "";
 
@@ -32,42 +31,52 @@ function createCocktailCards() {
     getCardData(function (data) {
         data = data.drinks;
 
-        // cycle thru 
             var card = [];
 
             for (var i=0;i < data.length; i++){
               cardImage = data[i].strDrinkThumb;
               cardData = data[i].strDrink;
+            
               card.push(`
-                  <div class="col-xs-12 col-sm-6 col-md-4">
-                    <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-                        <div class="mainflip">
-                            <div class="frontside">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="${cardImage}" alt="${cardData}"></p>
-                                        <h4 class="card-title">${cardData}</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                        <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="backside">
-                                <div class="card">
-                                    <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">${cardData}</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                  </div>
-                  `);
-            }
-            tableRows.push(`<tr>${card}</tr>`);
+                  
+<div class="col-xs-12 col-sm-6 col-md-4">
+	<div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+		<div class="mainflip">
+			<div class="frontside">
+				<div class="card">
+					<div class="card-body text-center">
+						<p>
+							<img class=" img-fluid" src="${cardImage}" alt="${cardData}">
+							</p>
+							<h4 class="card-title">${cardData}</h4>
+							<p class="card-text">This is basic card with image on top, title, description and button.</p>
+							<a href="#" class="btn btn-primary btn-sm">
+								<i class="fa fa-plus"></i>
+							</a>
+					</div>
+				</div>
+			</div>
+              `);
 
-        el.innerHTML = `<table>${tableRows}</table>`.replace(/,/g,"");
+              card.push(`
+			<div class="backside" id="backside">
+				<div class="card">
+					<div class="card-body text-center mt-4">
+						<h4 class="card-title">${cardData}</h4>
+						<p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+              `);
+            }
+        tableRows.push(`
+	<tr>${card}</tr>`);
+
+        el.innerHTML = `
+	<table>${tableRows}</table>`.replace(/,/g,"");
     });
 }
 
