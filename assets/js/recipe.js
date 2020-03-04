@@ -1,10 +1,26 @@
 // display drink info in card
 function displayCocktailRecipe(cocktailData){
-    cocktailData = cocktailData.drinks;
-    cocktail = cocktailData.strDrink;
-    cocktailImage = cocktailData.strDrinkThumb;
-    cocktailRecipe = cocktailData.strInstructions;
-    cocktailIngredients = cocktailData.strMeasure1 + " " + cocktailData.strIngredient1;
+ // -- data for testing --
+  /*var drinks = {
+    strDrink: "Afterglow",
+    strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
+    strInstructions: "Mix. Serve over ice.",
+    strIngredient1: "Grenadine",
+    strIngredient2: "Orange juice",
+    strIngredient3: "Pineapple juice",
+    strIngredient4: null,
+    strMeasure1: "1 part ",
+    strMeasure2: "4 parts ",
+    strMeasure3: "4 parts ",
+    strMeasure4: null
+  }*/
+  // -- end data for testing -- 
+
+  cocktailData = cocktailData.drinks;
+  cocktail = drinks.strDrink;
+  cocktailImage = drinks.strDrinkThumb;
+  cocktailRecipe = drinks.strInstructions;
+  cocktailIngredients = drinks.strMeasure1 + " " + drinks.strIngredient1;
   
     return `
     <div class="container">
