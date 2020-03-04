@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Cocktail Recipes from https://www.thecocktaildb.com/api.php">
+    <meta name="author" content="Tracy Johnson (Code Institute)">
+
+    <title>Cocktail Recipes</title>
+
+    <!-- Bootstrap core -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/recipe.css" rel="stylesheet">
+
+</head>
+
+<body onload="displayCocktailRecipe()">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+			<a class="navbar-brand" href="#">Cocktail Recipes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+            aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recipe.html">Recipes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+					<h1 class="display-4 text-white mt-5 mb-2">Non Alcoholic Cocktails to make your weekend!</h1>
+					<p class="lead mb-5 text-white-50">Try any of these to celebrate your day.</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+  <form class="form-inline mr-auto">
+    <input class="form-control mr-sm-2" type="text" id="cocktailName" value="cocktail name" aria-label="Search" oninput="fetchCocktailRecipe()">
+  </form>
+    <div id="data"></div>
+    <section id="recipe" class="pb-5">
+    <div id="cocktailData" class="pb-5"></div>
+    <div id="cocktailRecipeData"></div>
+      
+    </section>
+</div>
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Tracy Johnson, Budding Web Application Developer & Student</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+
+<!-- Bootstrap core -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- Custom javascript for this code-->
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script type="text/javascript" src="assets/js/recipe.js"></script>
+</body>
+
+</html>

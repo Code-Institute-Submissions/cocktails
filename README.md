@@ -18,18 +18,19 @@ Color Scheme:
  - #C39E8B ~ light orange
 
 ### User Stories
+- As a site owner, I want to retrieve data and images from an external API to display.
+- As a site owner, I want to display data and images of non-alcoholic cocktails.
+
+## To do items
 - As a site user, I want to select a glass type and view a list of all cocktails that can be made with it.
 - As a site user, I want to select a cocktail and view an image and the recipe.
 - As a site user, I want to input the name of a cocktail and view the resulting image and recipe. 
 - As a site user, I want to contact the company via a contact form or phone number.
 - As a site user, I want to view the website on both my computer and mobile deveice.
 - As a site user, I want to suggest a drink to add.
-- As a site owner, I want to retrieve data and images from an external API to display.
-- As a site owner, I want to display data and images of non-alcoholic cocktails.
 - As a site owner, I want to display data and images of glass types used to make cocktails.
 - As a site owner, I want to use pagination to only display 10 items per page.
 - As a site owner, I want to display information about my company.
-- As a site owner, I want to d
 
 ### Acceptance Criteria
 A site user is able to click images of glass types before viewing all cocktails available in the criteria. 
