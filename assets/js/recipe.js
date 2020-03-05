@@ -5,27 +5,32 @@ function displayCocktailRecipe(cocktailData){
     let cocktailImage = cocktailData.strDrinkThumb;
     let cocktailRecipe = cocktailData.strInstructions;
     let cocktailIngredients = cocktailData.strMeasure1 + " " + cocktailData.strIngredient1;
-  
-    return `
-    <div class="container">
-      <div class="row">
-          <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
-              <div class="box">
-                  <div class="box-icon">
-                      <img class=" img-fluid" src="${cocktailImage}" alt="${cocktail}">
-                  </div>
-                  <div class="info">
-                      <h4 class="text-center">${cocktail}</h4>
-                      <ul>
-                      <li>${cocktailIngredients}</li>
-                      </ul>
-                      <p>${cocktailRecipe}</p>
-                      <a href="index.html" class="btn">Back to List</a>
-                  </div>
-              </div>
-          </div>
-      </div>
-    </div>`;
+    let cocktailAlcoholic = cocktailData.strAlcoholic;
+    if (cocktailAlcoholic != "Alcoholic") {
+      return `
+      <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                <div class="box">
+                    <div class="box-icon">
+                        <img class=" img-fluid" src="${cocktailImage}" alt="${cocktail}">
+                    </div>
+                    <div class="info">
+                        <h4 class="text-center">${cocktail}</h4>
+                        <ul>
+                        <li>${cocktailIngredients}</li>
+                        </ul>
+                        <p>${cocktailRecipe}</p>
+                        <a href="index.html" class="btn">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>`;
+    } else {
+      $("#cocktailData").html(
+            `<h2>No recipe found for cocktail ${cocktail}<h2>`);
+    }
   }
   
   // get drink data from json
