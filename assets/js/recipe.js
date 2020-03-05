@@ -1,28 +1,10 @@
 // display drink info in card
 function displayCocktailRecipe(cocktailData){
-    // -- data for testing --
-    /*var drinks = {
-      0: {
-        strDrink: "Afterglow",
-        strDrinkThumb: "https://www.thecocktaildb.com/images/media/drink/vuquyv1468876052.jpg",
-        strInstructions: "Mix. Serve over ice.",
-        strIngredient1: "Grenadine",
-        strIngredient2: "Orange juice",
-        strIngredient3: "Pineapple juice",
-        strIngredient4: null,
-        strMeasure1: "1 part ",
-        strMeasure2: "4 parts ",
-        strMeasure3: "4 parts ",
-        strMeasure4: null
-      }
-    };*/
-    // -- end data for testing -- 
-  
-    cocktailData = drinks;
-    cocktail = cocktailData.strDrink;
-    cocktailImage = cocktailData.strDrinkThumb;
-    cocktailRecipe = cocktailData.strInstructions;
-    cocktailIngredients = cocktailData.strMeasure1 + " " + cocktailData.strIngredient1;
+
+    let cocktail = cocktailData.strDrink;
+    let cocktailImage = cocktailData.strDrinkThumb;
+    let cocktailRecipe = cocktailData.strInstructions;
+    let cocktailIngredients = cocktailData.strMeasure1 + " " + cocktailData.strIngredient1;
   
     return `
     <div class="container">
@@ -64,7 +46,7 @@ function displayCocktailRecipe(cocktailData){
     ).then(
       function(response) {
         var cocktailData = response;
-        $("#cocktailData").html(displayCocktailRecipe(cocktailData));
+        $("#cocktailData").html(displayCocktailRecipe(cocktailData.drinks[0]));
       },
       function(errorResponse){
         if (errorResponse.status === 404) {
